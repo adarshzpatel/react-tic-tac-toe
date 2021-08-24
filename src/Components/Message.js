@@ -1,7 +1,13 @@
 import React from 'react'
 
-function Message({winner,isXnext}) {
-    
+function Message({winner,isXnext,isDraw}) {
+    if(isDraw){
+        return(
+            <h2 className='text-3xl animate-bounce text-center text-yellow-500 font-medium'>
+            Draw !!
+        </h2>
+        )
+    }
     if(winner){
         return(
             <h2 className='text-3xl animate-bounce text-center text-blue-500 font-medium'>

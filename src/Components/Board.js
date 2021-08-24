@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Square from './Square'
 
-function Board({board,handleClick,isXnext}) {
-   
+function Board({board,handleClick,winningSquares}) {
     const renderSquare = (position) =>{
-        return <Square isXnext={isXnext} value={board[position]} onClick={()=>handleClick(position)}/>
+        const isWinningSquare = winningSquares.includes(position);
+        return <Square value={board[position]} isWinningSquare={isWinningSquare} onClick={()=>handleClick(position)}/>
     }
 
     return (
